@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,20 +10,20 @@
     <link rel="stylesheet" href="css/style.css">
     <style>
         /* 画面全体の背景色を変えてみよう */
-        body{
-
-        }
+        body {}
     </style>
 </head>
 
 <body>
-    <div id="clock">
-        <div id="hour"><img src="images/hourHand.png"></div>
-        <div id="minute"><img src="images/minuteHand.png"></div>
-        <div id="second"><img src="images/secondHand.png"></div>
-    </div>
-    <div id="digital">
-        <p id="time">00:00:00</p>
+    <div class="wrapper">
+        <div id="clock">
+            <div id="hour"><img src="images/hourHand.png"></div>
+            <div id="minute"><img src="images/minuteHand.png"></div>
+            <div id="second"><img src="images/secondHand.png"></div>
+        </div>
+        <div id="digital">
+            <p id="time">00:00:00</p>
+        </div>
     </div>
     <script>
         const hourHand = document.querySelector('#hour');
@@ -37,12 +38,12 @@
             let sec = now.getSeconds();
             let millsec = now.getMilliseconds();
 
-            time.innerHTML = `${( `0${hour}`).slice(-2)}:${( `0${min}`).slice(-2)}:${( `0${sec}`).slice(-2)}`;
-            hour = hour%12;
+            time.innerHTML = `${(`0${hour}`).slice(-2)}:${(`0${min}`).slice(-2)}:${(`0${sec}`).slice(-2)}`;
+            hour = hour % 12;
             let hourAngle = 30 * (hour + min / 60);
             hourHand.style.transform = `rotate(${hourAngle}deg)`;
             minHand.style.transform = 'rotate(' + 360 / 60 * min + 'deg)';
-            secHand.style.transform = 'rotate(' + 360 / 60 * (sec + millsec/1000) + 'deg)';
+            secHand.style.transform = 'rotate(' + 360 / 60 * (sec + millsec / 1000) + 'deg)';
             requestAnimationFrame(clock);
         }
         clock();

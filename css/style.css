@@ -27,3 +27,14 @@
     color:#75BC43;
     padding: 0.6rem;
 }
+@media (max-width: 640px) {
+    .wrapper {
+        height: 125vh;
+        zoom: 75%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+}
