@@ -29,12 +29,14 @@
 }
 @media (max-width: 640px) {
     .wrapper {
-        height: 125vh;
-        zoom: 75%;
+        height: 90vh;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+    }
+    #clock{
+        zoom:75%;
     }
 
 }
